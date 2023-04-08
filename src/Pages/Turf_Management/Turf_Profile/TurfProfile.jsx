@@ -5,7 +5,7 @@ import { FormValidate } from "../../../utils/Helpers/ValidateForm";
 import { errorSwal, successSwal } from "../../../utils/Helpers/Swal";
 import { turfProfileInitial } from "../../../utils/Helpers/Constats";
 import DefaultDetails from "./Components/DefaultDetails";
-import FormDetails from "./Components/FormDetails";
+import FormDetails from "./Components/FormDetails.jsx";
 import EditButton from "./Components/EditButton";
 
 const TurfPorfile = () => {
