@@ -1,4 +1,4 @@
-FormDetails = ({ errors, isEdit, details, setDetails }) => {
+export const FormDetails = ({ errors, isEdit, details, setDetails }) => {
 
     const handleInputChange = (event) => {
         setDetails({
@@ -67,4 +67,3 @@ FormDetails = ({ errors, isEdit, details, setDetails }) => {
         </form>
     )
 }
-export default FormDetails
