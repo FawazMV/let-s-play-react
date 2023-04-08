@@ -4,7 +4,7 @@ export const Axiosuser = Axios.create({
 })
 
 export const Axiosturf = Axios.create({
-    baseURL: 'http://3.27.116.175'
+    baseURL: 'https://turf.hexashop.cloud'
 })
 
 export const AxiosAdmin = Axios.create({
