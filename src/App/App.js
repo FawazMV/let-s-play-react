@@ -5,11 +5,9 @@ import ApplayoutUser from "./AppLayouts/ApplayoutUser";
 import AdminRoutes from "./Routers/AdminRoutes";
 import TurfRoutes from "./Routers/TurfRoutes";
 import UserRoutes from "./Routers/UserRoutes";
-
+import ApplayoutTurf from "./AppLayouts/ApplayoutTurf"
 
 const ApplayoutAdmin = lazy(() => import("./AppLayouts/ApplayoutAdmin"))
-const ApplayoutTurf = lazy(()=> import("./AppLayouts/ApplayoutTurf"))
-
 
 const AppRouter = createBrowserRouter([
     {
