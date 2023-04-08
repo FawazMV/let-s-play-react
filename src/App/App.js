@@ -24,7 +24,7 @@ const AppRouter = createBrowserRouter([
 
     {
         path: '/turf-admin',
-        element: (<Suspense><ApplayoutTurf /> </Suspense>),
+        element: (<ApplayoutTurf />),
         children: TurfRoutes
 
     },
