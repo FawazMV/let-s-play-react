@@ -1,6 +1,6 @@
 import Axios from 'axios'
 export const Axiosuser = Axios.create({
-    baseURL: 'http://3.26.144.127'
+    baseURL: 'https://let-s-play-server.onrender.com'
 })
 
 export const Axiosturf = Axios.create({
