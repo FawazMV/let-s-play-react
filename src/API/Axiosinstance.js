@@ -1,12 +1,12 @@
 import Axios from 'axios'
 export const Axiosuser = Axios.create({
-    baseURL: 'http://localhost:7777'
+    baseURL: 'https://let-s-play-user-service.onrender.com'
 })
 
 export const Axiosturf = Axios.create({
-    baseURL: 'http://localhost:8888'
+    baseURL: 'https://let-s-play-turf-service.onrender.com'
 })
 
 export const AxiosAdmin = Axios.create({
-    baseURL: 'http://localhost:7171'
+    baseURL: 'https://let-s-play-admin-service.onrender.com'
 })  
