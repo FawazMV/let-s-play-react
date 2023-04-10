@@ -12,6 +12,7 @@ const UserCount = () => {
 
     const getUsersCount = async () => {
         const response = await usersCount(token)
+        console.log(response)
         if (response?.status === 200) setCount(response.data)
     }
     return (
