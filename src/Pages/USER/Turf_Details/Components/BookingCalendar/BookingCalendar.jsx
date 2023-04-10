@@ -19,7 +19,7 @@ const BookingCalendar = ({ bookings }) => {
 
     return (
         <>
-            <div className=' flex'>
+            <div className='flex'>
                 <div className='w-full lg:w-1/2'>
                     <div className='flex justify-center w-full px-5'>
                         <Calendar maxDate={maxDate} tileDisabled={isDateDisabled} minDate={new Date()} onChange={setDate} onClickDay={() => move()} />

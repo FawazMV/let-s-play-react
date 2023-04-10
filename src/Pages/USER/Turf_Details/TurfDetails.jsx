@@ -7,7 +7,7 @@ const Turfs = ({ courtName, location, rating, reviews, images, mobile, loction_D
 
     return (
         <>
-            <div className="bg-slate-800 min-h-screen  w-full sm:px-10 md:px-32 lg:px-60 xl:px-80 py-6">
+            <div className="bg-slate-800 w-full sm:px-10 md:px-32 lg:px-60 xl:px-80 py-6">
                 <PhotoManagement photos={images} />
                 <div className='px-11 xl:px-28 py-5 w-full'>
                     <div className="w-full flex justify-between">
