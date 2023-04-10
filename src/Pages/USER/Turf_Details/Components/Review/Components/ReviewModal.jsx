@@ -10,7 +10,7 @@ const ReviewModal = ({ onClose, setUpdate,update }) => {
 
     return (
         <>
-            <div className="fixed inset-0 bg-gray-800 bg-opacity-50 transition-opacity "></div>
+            <div className="fixed  inset-0 bg-gray-800 bg-opacity-50 transition-opacity "></div>
             <div className={`fixed top-[20%] left-1/2 transform -translate-x-1/2  translate-y-0  rounded-md p-8 transition-transform duration-[1500ms] ${isClosing ? 'translate-y-[600px]' : ''}`} >
                 <span onClick={handleClose}>
                     <svg fill="currentColor" className="opacity-60 cursor-pointer absolute right-14 top-14 w-8 h-8" viewBox="0 0 16 16">

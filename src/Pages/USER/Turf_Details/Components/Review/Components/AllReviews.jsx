@@ -13,12 +13,13 @@ const AllReviews = ({ update }) => {
     const getReview = async () => {
         const response = await getTurfView(id)
         if (response?.status === 200) setReviews(response.data)
+        console.log(response)
     }
     return (
 
 
         <>
-            {reviews.length === 0 ? <Shimmer /> :
+            {!reviews ? <NotAvailable /> : reviews?.length === 0 ? <Shimmer /> :
                 reviews.map((review) => (
                     <article className="py-5">
                         <div className="flex items-center mb-4 space-x-4">
@@ -43,4 +44,11 @@ const AllReviews = ({ update }) => {
     )
 }
 
+
 export default AllReviews
+
+const NotAvailable = () => (
+    <div className="w-full text-center font-semibold text-2xl pt-10">
+        No reviews are avilable
+    </div>
+)

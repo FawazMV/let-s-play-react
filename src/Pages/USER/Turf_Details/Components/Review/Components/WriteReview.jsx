@@ -16,7 +16,7 @@ const WriteReview = ({ handleClose, setUpdate, update }) => {
         }
     }
     return (
-        <div className="flex pt-16 pb-10 flex-col max-w-xl px-8 shadow-sm rounded-xl lg:px-12 bg-gray-900 text-gray-100">
+        <div className="flex z-20 pt-16 pb-10 flex-col max-w-xl px-8 shadow-sm rounded-xl lg:px-12 bg-gray-900 text-gray-100">
             <div className="flex flex-col items-center w-full">
                 <h2 className="text-3xl font-semibold text-center">Your opinion matters!</h2>
                 <div className="flex flex-col items-center py-6 space-y-3">
