@@ -1,0 +1,5 @@
+{
+    "staticRoutes": {
+        "/**": "index.html"
+    }
+}
