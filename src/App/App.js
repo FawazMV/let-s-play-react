@@ -1,4 +1,3 @@
-import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom"
 import ApplayoutUser from "./AppLayouts/ApplayoutUser";
 import AdminRoutes from "./Routers/AdminRoutes";
@@ -6,8 +5,7 @@ import TurfRoutes from "./Routers/TurfRoutes";
 import UserRoutes from "./Routers/UserRoutes";
 import Error from "../Pages/Components/Error";
 import ApplayoutTurf from "./AppLayouts/ApplayoutTurf"
-
-const ApplayoutAdmin = lazy(() => import("./AppLayouts/ApplayoutAdmin"))
+import ApplayoutAdmin from "./AppLayouts/ApplayoutAdmin"
 
 const AppRouter = createBrowserRouter([
     {
@@ -19,7 +17,7 @@ const AppRouter = createBrowserRouter([
 
     {
         path: 'admin',
-        element: (<Suspense> <ApplayoutAdmin /> </Suspense>),
+        element: (<ApplayoutAdmin />),
         children: AdminRoutes
     },
 
