@@ -13,20 +13,20 @@ const ApplayoutAdmin = lazy(() => import("./AppLayouts/ApplayoutAdmin"))
 
 const AppRouter = createBrowserRouter([
     {
-        path: '/',
+        path: '',
         element: <ApplayoutUser />,
         errorElement: <Error />,
         children: UserRoutes
     },
 
     {
-        path: '/admin',
+        path: 'admin',
         element: (<Suspense> <ApplayoutAdmin /> </Suspense>),
         children: AdminRoutes
     },
 
     {
-        path: '/turf-admin',
+        path: 'turf-admin',
         element: (<Suspense><ApplayoutTurf /></Suspense>),
         children: TurfRoutes
 
