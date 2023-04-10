@@ -19,7 +19,7 @@ const Modal = ({ setModal, date, time }) => (
                     </h2>
                     <p className="flex-1 text-gray-400">You have selected the time slot of {time} for one hour on {date.toLocaleDateString()}. Please complete the payment to finalize your booking. </p>
                     <div className="flex flex-col justify-end gap-3 mt-6 sm:flex-row">
-                        <button onClick={() => setModal(false)} className="px-6 py-2 hover:opacity-50'} rounded-sm">Cancel</button>
+                        <button onClick={() => setModal(false)} className="px-6 py-2 hover:opacity-50' rounded-sm">Cancel</button>
                         <Payment date={date} time={time} setModal={setModal} />
                     </div>
                 </div>

@@ -30,7 +30,7 @@ const Payment = ({ setModal, date, time }) => {
         } else navigate('/login')
     }
     return (
-        <button disabled={load} onClick={payment} className={`flex justify-center items-center rounded-sm shadow-sm bg-violet-500 ${load ? 'cursor-not-allowed py-0 px-4' : 'py-2 px-6  hover:bg-violet-400 transition'}  text-gray-50 font-bold`}>
+        <button disabled={load} onClick={payment} className={`flex justify-center items-center rounded-sm shadow-sm bg-violet-500 ${load ? 'cursor-not-allowed py-2 px-4' : 'py-2 px-6  hover:bg-violet-400 transition'}  text-gray-50 font-bold`}>
             Proceed to Payment
             {load &&
                 <svg aria-hidden="true" className="w-6 h-4 ml-2 text-gray-200 animate-spin fill-violet-400 " viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
