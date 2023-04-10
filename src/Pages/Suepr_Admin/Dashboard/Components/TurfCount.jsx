@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react"
+import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import { turfsCount } from "../../../../API/ServerRequests/Admin/AdminApi"
 
 const TurfCount = () => {
     const [count, setCount] = useState('0')
+    const token = useSelector(store => store.adminAuth.token)
     useEffect(() => {
-        getTurfsCounts()
-    }, [])
+        token && getTurfsCounts()
+    }, [token])
 
     const getTurfsCounts = async () => {
-        const response = await turfsCount('token')
-        if (response.status === 200) setCount(response.data)
+        const response = await turfsCount(token)
+        if (response?.status === 200) setCount(response.data)
     }
     return (
         <div className="flex flex-col bg-gray-900 p-2 md:my-0 my-5 rounded-xl">

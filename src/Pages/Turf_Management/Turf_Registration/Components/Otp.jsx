@@ -53,7 +53,6 @@ const OtpForm = ({ number, modal, Registration }) => {
             </form>
             {resend ? <div className="text-blue-600 my-2 flex w-full justify-evenly" onClick={() => {
                 Resend(number).then(() => setResend(false))
-                    .catch((err) => console.log(err))
             }}> <p>Resend OTP</p></div> : ''}
             <div className="text-red-500 flex w-full justify-evenly"> <p>{err}</p></div>
         </div>

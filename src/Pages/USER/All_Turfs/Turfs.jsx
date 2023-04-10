@@ -15,7 +15,6 @@ const Turf = () => {
     const [turfs, setTurfs] = useState(null)
     useEffect(() => {
         getTurfs().then(data => setTurfs(data))
-            .catch(error => console.log(error))
     }, [])
 
     return (

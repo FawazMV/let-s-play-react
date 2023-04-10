@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react"
+import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import { usersCount } from "../../../../API/ServerRequests/Admin/AdminApi"
 
 const UserCount = () => {
     const [count, setCount] = useState('0')
+    const token = useSelector(store => store.adminAuth.token)
     useEffect(() => {
-        getUsersCount()
-    }, [])
+        token && getUsersCount()
+    }, [token])
 
     const getUsersCount = async () => {
-        const response = await usersCount('token')
-        if (response.status === 200) setCount(response.data)
+        const response = await usersCount(token)
+        if (response?.status === 200) setCount(response.data)
     }
     return (
         <div className=" flex flex-col bg-gray-900 p-2 rounded-xl">

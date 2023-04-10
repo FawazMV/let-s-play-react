@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { RequstAccept, TurfsRequsted, RequstCancel } from '../../../API/ServerRequests/Admin/AdminApi';
 import { ConfirmSwal, successSwal } from '../../../utils/Helpers/Swal';
 
@@ -8,6 +9,7 @@ import { ConfirmSwal, successSwal } from '../../../utils/Helpers/Swal';
 const Turf_Management = ({ turfs, update }) => {
     const [selectedTurf, setSelectedTurf] = useState(null);
     const [showTooltip, setShowTooltip] = useState(false);
+    const token = useSelector(store => store.adminAuth.token)
     const handleTurfClick = (turf) => {
         setSelectedTurf(turf);
     };
@@ -15,7 +17,7 @@ const Turf_Management = ({ turfs, update }) => {
     const Accept = async (turf) => {
         const text = `A request from the court ${turf.courtName}!`
         if (await ConfirmSwal(text)) {
-            RequstAccept(turf._id, 12345).then(() => {
+            RequstAccept(turf._id, token).then(() => {
                 successSwal('Turf Added Successfully')
                 update(turf._id)
             })
@@ -25,7 +27,7 @@ const Turf_Management = ({ turfs, update }) => {
     const Cancel = async (turf) => {
         const text = `Cancel the request from the ${turf.courtName}!`
         if (await ConfirmSwal(text)) {
-            RequstCancel(turf._id, 12345).then(() => {
+            RequstCancel(turf._id, token).then(() => {
                 successSwal('Turf removed successfully')
                 update(turf._id)
             })
@@ -109,13 +111,13 @@ const Turf_Management = ({ turfs, update }) => {
 const Turf_Requests = () => {
     const [data, setData] = useState([])
     const [update, setUpdate] = useState(false);
+    const token = useSelector(store => store.adminAuth.token)
     useEffect(() => {
-        getTurfs()
-    }, [update])
+        token && getTurfs()
+    }, [update, token])
 
     const getTurfs = () => {
-        TurfsRequsted(123).then(data => setData(data))
-            .catch(err => console.log(err))
+        TurfsRequsted(token).then(data => setData(data))
     }
     return (
         <div className="container mx-auto pt-28 pb-8">

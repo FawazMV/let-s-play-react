@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react"
+import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import { profitCalculate } from "../../../../API/ServerRequests/Admin/AdminApi"
 
 const ProfitTotal = () => {
     const [value, setValue] = useState('0')
+    const token = useSelector(store => store.adminAuth.token)
     useEffect(() => {
-        getprofitCalculate()
-    }, [])
+        token && getprofitCalculate()
+    }, [token])
 
     const getprofitCalculate = async () => {
-        const response = await profitCalculate('token')
+        const response = await profitCalculate(token)
         if (response?.status === 200) {
             if (response?.data?.profit) setValue(response?.data?.profit)
         }

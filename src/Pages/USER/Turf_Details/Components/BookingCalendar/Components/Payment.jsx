@@ -24,7 +24,6 @@ const Payment = ({ setModal, date, time }) => {
                 const result = await payementAction(token,response?.data?.booking_id);
                 if (result?.status === 200) {
                     setModal(false)
-                    console.log(result.data)
                     await stripe.redirectToCheckout({ sessionId: result.data });
                 } else errorSwal()
             } else errorSwal()

@@ -17,7 +17,6 @@ const Bookings = () => {
     const getBookedTurfs = async () => {
         const response = await getBookedDetails(token)
         if (response?.status === 200) setBookings(response.data)
-        else console.log(response.data)
     }
 
     return (

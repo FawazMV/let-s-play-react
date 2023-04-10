@@ -5,17 +5,14 @@ import { useSelector } from "react-redux"
 const EarningReport = () => {
 
     const [report, setReport] = useState([])
-    // const token = useSelector(store => store.adminAuth.token)
+    const token = useSelector(store => store.adminAuth.token)
     useEffect(() => {
-        getReport()
-    }, [])
+        token && getReport()
+    }, [token])
 
     const getReport = async () => {
-        const response = await getTurfsReport('token')
+        const response = await getTurfsReport(token)
         if (response?.status === 200) setReport(response.data)
-
-        else console.log(response)
-        console.log(response.data)
     }
 
     return (
@@ -50,10 +47,10 @@ const EarningReport = () => {
                                     {report.count}
                                 </td>
                                 <td className="px-14 py-4 bg-gray-800">
-                                    ₹ {report.totalPrice} 
+                                    ₹ {report.totalPrice}
                                 </td>
                                 <td className="px-12 py-4">
-                                    ₹ {report.totalPrice * 3 / 100} 
+                                    ₹ {report.totalPrice * 3 / 100}
                                 </td>
                             </tr>
                         ))}

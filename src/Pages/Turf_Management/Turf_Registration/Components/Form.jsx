@@ -74,7 +74,6 @@ const Form = ({ div }) => {
                                     <input className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.imagesError ? "border-red-500" : ""}`}
                                         id='img' type="file" name='images' placeholder='Add Turf Images' multiple onChange={async (e) => {
                                             const images = Array.from(e.target.files)
-                                            console.log(images)
                                             setFormData({ ...formData, images })
                                         }} />
                                     <p className="text-red-500 text-xs italic">{errors.imagesError}</p>

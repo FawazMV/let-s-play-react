@@ -6,13 +6,16 @@ import AdminRoutes from "./Routers/AdminRoutes";
 import TurfRoutes from "./Routers/TurfRoutes";
 import UserRoutes from "./Routers/UserRoutes";
 import ApplayoutTurf from "./AppLayouts/ApplayoutTurf"
+import Error from "../Pages/Components/Error";
 
 const ApplayoutAdmin = lazy(() => import("./AppLayouts/ApplayoutAdmin"))
+const ApplayoutTurf = lazy(() => import("./AppLayouts/ApplayoutTurf"))
 
 const AppRouter = createBrowserRouter([
     {
         path: '/',
         element: <ApplayoutUser />,
+        errorElement: <Error />,
         children: UserRoutes
     },
 
@@ -24,7 +27,7 @@ const AppRouter = createBrowserRouter([
 
     {
         path: '/turf-admin',
-        element: (<ApplayoutTurf />),
+        element: (<Suspense><ApplayoutTurf /></Suspense>),
         children: TurfRoutes
 
     },

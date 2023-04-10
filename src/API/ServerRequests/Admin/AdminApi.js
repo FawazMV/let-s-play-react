@@ -59,6 +59,24 @@ export const getTurfsReport = async (token) => {
     }
 }
 
+export const getPaymentRequests = async (token) => {
+    try {
+        const response = await axios.get('/payment-requests', { headers: { Authorization: `Bearer ${token}` } })
+        return response
+    } catch (error) {
+        return error?.response
+    }
+}
+
+export const confirmPaymentRequest = async (token, id) => {
+    try {
+        const response = await axios.patch('/payment-confirm', { id }, { headers: { Authorization: `Bearer ${token}` } })
+        return response
+    } catch (error) {
+        return error?.response
+    }
+}
+
 
 //Admin dashboard
 

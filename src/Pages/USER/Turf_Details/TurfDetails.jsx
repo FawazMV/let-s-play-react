@@ -69,9 +69,7 @@ const TurfDetails = () => {
     })
     useEffect(() => {
         getTurfDetails(id).then(data => {
-            console.log(data)
             setTurf({ ...turf, ...data, })
-            console.log(turf)
         })
 
     }, [])

@@ -69,7 +69,6 @@ export const payementAction = async (token, book_id) => {
         });
         return response;
     } catch (error) {
-        console.log(error);
         return error?.response;
     }
 };

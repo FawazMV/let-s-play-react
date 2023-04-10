@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux"
 import { Navigate } from "react-router-dom"
-import { tokenValidationTurf } from "../../utils/Helpers/TokenValidations.js"
+import { tokenValidationTurf } from "../../utils/Helpers/TokenValidations"
 
 
 

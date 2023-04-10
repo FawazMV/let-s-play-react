@@ -13,7 +13,6 @@ const Report = () => {
     const getReport = async () => {
         const response = await getEarningReport(token)
         if (response?.status === 200) setReport(response.data)
-        else console.log(response?.data)
     }
 
     return (

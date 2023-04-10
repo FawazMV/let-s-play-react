@@ -1,23 +1,25 @@
 
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { ManageTurf, TurfsAccepted } from '../../../API/ServerRequests/Admin/AdminApi';
 import { ConfirmSwal } from '../../../utils/Helpers/Swal';
 
 const Turf_Management = ({ turfs, update }) => {
     const [selectedTurf, setSelectedTurf] = useState(null);
     const [showTooltip, setShowTooltip] = useState(false);
+    const token = useSelector(store => store.adminAuth.token)
     const handleTurfClick = (turf) => {
         setSelectedTurf(turf);
     };
     const manageTurf = async (status, turf,) => {
         const text = `Do you want to ${status ? '' : 'un'}block the court ${turf.courtName}!`
         if (await ConfirmSwal(text)) {
-            ManageTurf(turf._id, status, 1234).then(() => update("" + turf._id + status))
+            ManageTurf(turf._id, status, token).then(() => update("" + turf._id + status))
         }
     }
 
     return (
-        <div className="bg-white shadow-md rounded-lg overflow-hidden"> 
+        <div className="bg-white shadow-md rounded-lg overflow-hidden">
             <div className="px-6 py-4">
                 <h2 className="font-bold text-2xl mb-4">Turf Management</h2>
                 <div className="overflow-x-auto">
@@ -88,13 +90,13 @@ const Turf_Management = ({ turfs, update }) => {
 const Turfs_Accepted = () => {
     const [data, setData] = useState([])
     const [update, setUpdate] = useState(false);
+    const token = useSelector(store => store.adminAuth.token)
     useEffect(() => {
-        getTurfs()
-    }, [update])
+        token && getTurfs()
+    }, [update, token])
 
     const getTurfs = () => {
-        TurfsAccepted(123).then(data => setData(data))
-            .catch(err => console.log(err))
+        TurfsAccepted(token).then(data => setData(data))
     }
     return (
         <div className="container mx-auto  pt-28 pb-8">

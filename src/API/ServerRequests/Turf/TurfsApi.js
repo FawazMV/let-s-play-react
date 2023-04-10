@@ -104,6 +104,18 @@ export const getTurfBookingCount = async (token) => {
     }
 }
 
+
+export const withdrawalRequest = async (token) => {
+    try {
+        const response = await axios.get('/turf-payment-request', {
+            headers: { Authorization: `Bearer ${token}` }
+        })
+        return response
+    } catch (error) {
+        return error?.response
+    }
+}
+
 ///booked slots
 
 export const getBookedSlots = async (date, id) => {
@@ -125,3 +137,5 @@ export const getTurfView = async (id) => {
         return error?.response
     }
 }
+
+

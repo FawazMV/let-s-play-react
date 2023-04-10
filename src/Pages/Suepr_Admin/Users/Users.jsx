@@ -29,14 +29,15 @@ const UserList = ({ users }) => {
 
 import React from 'react';
 import { getUsers } from '../../../API/ServerRequests/Admin/AdminApi';
+import { useSelector } from 'react-redux';
 
 
 const Users = () => {
     const [users, setUsers] = useState([])
+    const token = useSelector(store => store.adminAuth.token)
     useEffect(() => allusers(), [])
     const allusers = () => {
-        getUsers().then(users => setUsers(users))
-            .catch(err => console.log(err))
+        getUsers(token).then(users => setUsers(users))
     }
     return (
         <div className="container mx-auto pt-28 pb-8">

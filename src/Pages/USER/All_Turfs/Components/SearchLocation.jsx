@@ -23,7 +23,7 @@ const SearchLoacation = ({ setTurfs }) => {
                 break;
             }
         }
-        const locationResult = await getLocationWiseTurfs(distric).catch((err) => console.log(err.message));
+        const locationResult = await getLocationWiseTurfs(distric)
         setTurfs(locationResult)
     };
     return (

@@ -29,7 +29,6 @@ const TurfPorfile = () => {
     const handleUpdate = async () => {
         const err = FormValidate(details)
         setErrors(err)
-        console.log(err)
         if (Object.keys(err).length) return
         const response = await updateTurfDetails(details, token)
         if (response?.status === 200) {
