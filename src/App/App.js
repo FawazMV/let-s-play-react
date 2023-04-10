@@ -1,11 +1,9 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom"
-import ApplayoutTurf from "./AppLayouts/ApplayoutTurf";
 import ApplayoutUser from "./AppLayouts/ApplayoutUser";
 import AdminRoutes from "./Routers/AdminRoutes";
 import TurfRoutes from "./Routers/TurfRoutes";
 import UserRoutes from "./Routers/UserRoutes";
-import ApplayoutTurf from "./AppLayouts/ApplayoutTurf"
 import Error from "../Pages/Components/Error";
 import ApplayoutTurf from "./AppLayouts/ApplayoutTurf"
 
