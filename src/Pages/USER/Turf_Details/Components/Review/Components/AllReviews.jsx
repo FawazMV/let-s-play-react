@@ -4,7 +4,7 @@ import { getTurfView } from "../../../../../../API/ServerRequests/Turf/TurfsApi"
 import Shimmer from "./Shimmer"
 
 const AllReviews = ({ update }) => {
-    const [reviews, setReviews] = useState([])
+    const [reviews, setReviews] = useState(null)
 
     useEffect(() => {
         getReview()
@@ -19,7 +19,7 @@ const AllReviews = ({ update }) => {
 
 
         <>
-            {!reviews ? <NotAvailable /> : reviews?.length === 0 ? <Shimmer /> :
+            {!reviews ? < Shimmer /> : reviews?.length === 0 ? <NotAvailable /> :
                 reviews.map((review) => (
                     <article className="py-5">
                         <div className="flex items-center mb-4 space-x-4">
