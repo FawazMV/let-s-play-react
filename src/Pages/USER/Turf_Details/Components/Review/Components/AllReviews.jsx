@@ -25,7 +25,7 @@ const AllReviews = ({ update }) => {
                         <div className="flex items-center mb-4 space-x-4">
                             <img className="w-10 h-10 rounded-full" src="/docs/images/people/profile-picture-5.jpg" alt="" />
                             <div className="space-y-1 font-medium text-white">
-                                <p>{review.user.username} </p>
+                                <p>{review?.user[0]?.username} </p>
                             </div>
                         </div>
                         <div className="flex items-center mb-1">
