@@ -38,7 +38,7 @@ const SearchLoacation = ({ setTurfs }) => {
             </span>
             <input value={searchTerm}  autoComplete="of" type="text" name="Search" onChange={textChange} placeholder="Location..." className=" py-[10px] pl-10 text-sm rounded-md w-full md:w-auto focus:outline-none bg-gray-900 text-gray-100 focus:bg-gray-800  focus:border-gray-400" />
 
-            <ul className=" w-full absolute  bg-white rounded-md" >
+            <ul className=" absolute  bg-white rounded-md" >
                 {searchResults.map((result) => (
                     <li key={result.id} onClick={() => handleLocationSelect(result)} className="px-3 py-2 cursor-pointer border-b-2 hover:bg-gray-200">
                         <span className="text-lg font-bold">{result.text}</span> <br />
