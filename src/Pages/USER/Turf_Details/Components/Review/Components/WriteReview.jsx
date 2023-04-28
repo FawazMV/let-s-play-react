@@ -33,7 +33,7 @@ const WriteReview = ({ handleClose, setUpdate, update }) => {
                     </div>
                 </div>
                 <div className="flex flex-col w-full">
-                    <textarea onChange={(e) => setText(e.target.value)} value={text} rows="3" placeholder="Message..." className="p-4 rounded-md resize-none text-gray-100 bg-gray-900"></textarea>
+                    <textarea onChange={(e) => setText(e.target.value)} value={text} rows="3" placeholder="Message..." className="p-4 border border-gray-400 rounded-md resize-none text-gray-100 bg-gray-900"></textarea>
                     <button onClick={submitReview} type="button" className="py-4 my-8 font-semibold rounded-md text-gray-900 bg-violet-400">Leave feedback</button>
                 </div>
             </div>

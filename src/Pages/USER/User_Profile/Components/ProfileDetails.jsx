@@ -22,17 +22,17 @@ const ProfileDetails = ({ editProfile, update, user }) => {
                 </svg></span> Edit</h1>}
             <div className="col-span-full sm:col-span-3">
                 <label htmlFor="name" className="text-sm">Full Name</label>
-                <input onChange={editProfile} id="name" name='username' autoComplete="off" type="text" placeholder='User name' defaultValue={user?.username} disabled={!isEdit} className={`w-full text-gray-900 rounded-md focus:ring focus:ring-opacity-75 ${errors.username ? 'focus:ring-red-400' : 'focus:ring-violet-400'} border-gray-700`} />
+                <input onChange={editProfile} id="name" name='username' autoComplete="off" type="text" placeholder='User name' defaultValue={user?.username} disabled={!isEdit} className={`w-full px-2 py-1 text-gray-900 rounded-md focus:ring focus:ring-opacity-75 ${errors.username ? 'focus:ring-red-400' : 'focus:ring-violet-400'} border-gray-700`} />
                 {errors.username && (<p className="pt-1 text-red-500 text-xs italic"> {errors.username}</p>)}
             </div>
             <div className="col-span-full sm:col-span-3">
                 <label htmlFor="mobile" className="text-sm">Mobile Number</label>
-                <input onChange={editProfile} id="mobile" name='mobile' autoComplete="off" type="text" placeholder='Mobile number' defaultValue={user?.mobile} disabled={!isEdit} className={`w-full text-gray-900 rounded-md focus:ring focus:ring-opacity-75 ${errors.mobile ? 'focus:ring-red-400' : 'focus:ring-violet-400'} border-gray-700`} />
+                <input onChange={editProfile} id="mobile" name='mobile' autoComplete="off" type="text" placeholder='Mobile number' defaultValue={user?.mobile} disabled={!isEdit} className={`w-full px-2 py-1 text-gray-900 rounded-md focus:ring focus:ring-opacity-75 ${errors.mobile ? 'focus:ring-red-400' : 'focus:ring-violet-400'} border-gray-700`} />
                 {errors.mobile && (<p className="text-red-500 pt-1 text-xs italic"> {errors.mobile}</p>)}
             </div>
             <div className="col-span-full sm:col-span-3">
                 <label htmlFor="email" className="text-sm">Email</label>
-                <input onChange={editProfile} id="email" name='email' autoComplete="off" type="email" defaultValue={user?.email} disabled={!isEdit} placeholder="Email" className={`w-full rounded-md text-gray-900 focus:ring focus:ring-opacity-75 ${errors.email ? 'focus:ring-red-400' : 'focus:ring-violet-400'} border-gray-700`} />
+                <input onChange={editProfile} id="email" name='email' autoComplete="off" type="email" defaultValue={user?.email} disabled={!isEdit} placeholder="Email" className={`w-full px-2 py-1 rounded-md text-gray-900 focus:ring focus:ring-opacity-75 ${errors.email ? 'focus:ring-red-400' : 'focus:ring-violet-400'} border-gray-700`} />
                 {errors.username && (<p className="text-red-500 pt-1 text-xs italic"> {errors.email}</p>)}
             </div></>)
 }
