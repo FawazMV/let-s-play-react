@@ -16,7 +16,6 @@ const Turf = () => {
     useEffect(() => {
         getTurfs().then(data => setTurfs(data))
     }, [])
-    console.log(turfs)
     return (
         <div className='min-h-screen bg-gray-800 pt-[70px]'>
             <SearchLoacation setTurfs={setTurfs} />

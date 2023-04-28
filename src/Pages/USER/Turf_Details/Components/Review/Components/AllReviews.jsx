@@ -13,7 +13,6 @@ const AllReviews = ({ update }) => {
     const getReview = async () => {
         const response = await getTurfView(id)
         if (response?.status === 200) setReviews(response.data)
-        console.log(response)
     }
     return (
 
