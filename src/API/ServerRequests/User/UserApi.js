@@ -75,7 +75,7 @@ export const payementAction = async (token, book_id) => {
 
 export const bookingSuccess = async (token, id) => {
     try {
-        const response = await axios.patch('/book/booking-success', { id }, {
+        const response = await axios.put('/book/booking-success', { id }, {
             headers: { Authorization: `Bearer ${token}` }
         });
         return response
@@ -84,7 +84,7 @@ export const bookingSuccess = async (token, id) => {
 
 export const bookingFailed = async (token, id) => {
     try {
-        const response = await axios.patch('/book/booking-failed', { id }, {
+        const response = await axios.put('/book/booking-failed', { id }, {
             headers: { Authorization: `Bearer ${token}` }
         });
         return response

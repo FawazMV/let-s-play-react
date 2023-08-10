@@ -33,7 +33,7 @@ export const getTurfProfile = async (token) => {
 
 export const updateTurfDetails = async (data, token) => {
     try {
-        const response = await axios.patch('/update-turf-profile', data, {
+        const response = await axios.put('/update-turf-profile', data, {
             headers: { Authorization: `Bearer ${token}` }
         })
         return response

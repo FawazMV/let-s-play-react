@@ -10,7 +10,7 @@ export const TurfsRequsted = (token) => {
 
 export const RequstAccept = (id, token) => {
     return new Promise((resolve, reject) => {
-        axios.patch('/turf-accept', { id }, { headers: { Authorization: `Bearer ${token}` } })
+        axios.put('/turf-accept', { id }, { headers: { Authorization: `Bearer ${token}` } })
             .then((data) => resolve())
             .catch((err) => reject(err))
     })
@@ -35,7 +35,7 @@ export const TurfsAccepted = (token) => {
 
 export const ManageTurf = (id, status, token) => {
     return new Promise((resolve, reject) => {
-        axios.patch('/turf-manage', { id, status }, { headers: { Authorization: `Bearer ${token}` } })
+        axios.put('/turf-manage', { id, status }, { headers: { Authorization: `Bearer ${token}` } })
             .then(() => resolve())
             .catch((err) => reject(err))
     })
@@ -70,7 +70,7 @@ export const getPaymentRequests = async (token) => {
 
 export const confirmPaymentRequest = async (token, id) => {
     try {
-        const response = await axios.patch('/payment-confirm', { id }, { headers: { Authorization: `Bearer ${token}` } })
+        const response = await axios.put('/payment-confirm', { id }, { headers: { Authorization: `Bearer ${token}` } })
         return response
     } catch (error) {
         return error?.response
